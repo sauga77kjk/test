@@ -244,4 +244,5 @@ mapre_upvr.OnClientEvent:Connect(function(arg1) -- Line 185
 	}):Play()
 	wait(1.55)
 	script.Parent:Destroy()
+
 end)
