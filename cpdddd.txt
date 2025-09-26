@@ -1,0 +1,247 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Decompiler will be improved VERY SOON!
+-- Decompiled with Konstant V2.1, a fast Luau decompiler made in Luau by plusgiant5 (https://discord.gg/brNTY8nX8t)
+-- Decompiled on 2025-09-22 01:30:13
+-- Luau version 6, Types version 3
+-- Time taken: 0.005620 seconds
+
+local TweenService_upvr = game:GetService("TweenService")
+local effects = script.Parent:WaitForChild("effects")
+local circle = effects:WaitForChild("circle")
+local flare = effects:WaitForChild("flare")
+local mapre_upvr = game:GetService("ReplicatedStorage"):WaitForChild("mapre")
+script.Parent:WaitForChild("voting"):Play()
+local maps_upvr = script.Parent.maps
+for _, v_upvr in pairs(maps_upvr:GetChildren()) do
+	pcall(function() -- Line 13
+		--[[ Upvalues[1]:
+			[1]: v_upvr (readonly)
+		]]
+		if v_upvr.ViewportFrame:GetChildren()[1]:FindFirstChild("CameraPart") ~= nil then
+			local Camera = Instance.new("Camera")
+			Camera.Name = "vpcam"
+			Camera.CFrame = v_upvr.ViewportFrame:GetChildren()[1]:WaitForChild("CameraPart").CFrame
+			Camera.Parent = v_upvr.ViewportFrame
+			v_upvr.ViewportFrame.CurrentCamera = Camera
+		else
+			local TextLabel = Instance.new("TextLabel")
+			TextLabel.BackgroundColor3 = Color3.new()
+			TextLabel.TextScaled = true
+			TextLabel.TextColor3 = Color3.new(1, 1, 1)
+			TextLabel.Text = "No Camera"
+			TextLabel.Size = UDim2.fromScale(1, 1)
+			TextLabel.Parent = v_upvr.ViewportFrame
+		end
+	end)
+end
+local tbl_2 = {
+	Top = UDim2.new(0.5, 0, 0.44, 0);
+	Left = UDim2.new(0.45, 0, 0.52, 0);
+	Right = UDim2.new(0.55, 0, 0.52, 0);
+}
+local votingeye = script.Parent:WaitForChild("votingeye")
+local Triangle_upvr = votingeye.Eye.Triangle
+if game:GetService("Players").LocalPlayer:HasTag("HasSpiritTriangle") == false and workspace:HasTag("FectaEnabled") == true then
+	function CoinFlip() -- Line 49
+		return ({-1, 1})[Random.new():NextInteger(1, 2)]
+	end
+	local var20_upvw = 0
+	local var21_upvw
+	var21_upvw = Triangle_upvr.MouseButton1Click:Connect(function() -- Line 54
+		--[[ Upvalues[4]:
+			[1]: var20_upvw (read and write)
+			[2]: var21_upvw (read and write)
+			[3]: Triangle_upvr (readonly)
+			[4]: TweenService_upvr (readonly)
+		]]
+		-- KONSTANTERROR: [0] 1. Error Block 9 start (CF ANALYSIS FAILED)
+		if 10 <= var20_upvw then
+			var21_upvw:Disconnect()
+			script.Tink.PlaybackSpeed = 1.4
+			script.Tink:Play()
+			script.Tink.TimePosition = 1.2
+			local ReplicatedF = game:GetService("ReplicatedStorage"):FindFirstChild("ReplicatedF")
+			if ReplicatedF ~= nil then
+				ReplicatedF:FindFirstChild("FEvent"):Fire("pop", Triangle_upvr.AbsolutePosition)
+				Triangle_upvr.Visible = false
+				-- KONSTANTWARNING: GOTO [115] #78
+			end
+		else
+			script.Tink.PlaybackSpeed = Random.new():NextNumber(1.9, 2.1)
+			script.Tink:Play()
+			script.Tink.TimePosition = 1.2
+			Triangle_upvr.Rotation = math.random(35, 45) * CoinFlip()
+			TweenService_upvr:Create(Triangle_upvr, TweenInfo.new(1, Enum.EasingStyle.Back), {
+				Rotation = 0;
+			}):Play()
+		end
+		-- KONSTANTERROR: [0] 1. Error Block 9 end (CF ANALYSIS FAILED)
+		-- KONSTANTERROR: [115] 78. Error Block 6 start (CF ANALYSIS FAILED)
+		var20_upvw += 1
+		-- KONSTANTERROR: [115] 78. Error Block 6 end (CF ANALYSIS FAILED)
+	end)
+else
+	Triangle_upvr.Visible = false
+end
+local any_Create_result1_upvr_3 = TweenService_upvr:Create(circle, TweenInfo.new(10, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1), {
+	Rotation = circle.Rotation + 360;
+})
+local any_Create_result1_upvr_2 = TweenService_upvr:Create(flare, TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1), {
+	Rotation = circle.Rotation + 360;
+})
+any_Create_result1_upvr_2:Play()
+any_Create_result1_upvr_3:Play()
+TweenService_upvr:Create(effects:WaitForChild("flame"), TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+	ImageTransparency = 0.4;
+}):Play()
+TweenService_upvr:Create(flare, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+	ImageTransparency = 0;
+}):Play()
+TweenService_upvr:Create(circle, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+	ImageTransparency = 0.3;
+}):Play()
+wait(0.3)
+TweenService_upvr:Create(votingeye.Triangle, TweenInfo.new(1.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+	ImageTransparency = 0;
+}):Play()
+TweenService_upvr:Create(votingeye.Eye, TweenInfo.new(1.75, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+	ImageTransparency = 0;
+}):Play()
+TweenService_upvr:Create(Triangle_upvr, TweenInfo.new(1.75, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+	ImageTransparency = 0.52;
+}):Play()
+local any_Create_result1_upvr_7 = TweenService_upvr:Create(votingeye.Eye, TweenInfo.new(0.3, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+	Position = tbl_2.Top;
+})
+local any_Create_result1_upvr_5 = TweenService_upvr:Create(votingeye.Eye, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+	Position = tbl_2.Left;
+})
+local any_Create_result1_upvr_4 = TweenService_upvr:Create(votingeye.Eye, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+	Position = tbl_2.Right;
+})
+function checkandmoveeye() -- Line 125
+	--[[ Upvalues[4]:
+		[1]: mapre_upvr (readonly)
+		[2]: any_Create_result1_upvr_7 (readonly)
+		[3]: any_Create_result1_upvr_5 (readonly)
+		[4]: any_Create_result1_upvr_4 (readonly)
+	]]
+	local tbl = {mapre_upvr.map1.Value, mapre_upvr.map2.Value, mapre_upvr.map3.Value}
+	table.sort(tbl)
+	if mapre_upvr.map1.Value == tbl[3] then
+		any_Create_result1_upvr_7:Play()
+	else
+		if mapre_upvr.map2.Value == tbl[3] then
+			any_Create_result1_upvr_5:Play()
+			return
+		end
+		if mapre_upvr.map3.Value == tbl[3] then
+			any_Create_result1_upvr_4:Play()
+		end
+	end
+end
+mapre_upvr.map1.Changed:Connect(checkandmoveeye)
+mapre_upvr.map2.Changed:Connect(checkandmoveeye)
+mapre_upvr.map3.Changed:Connect(checkandmoveeye)
+input1 = maps_upvr.map1.input.MouseButton1Click:Connect(function() -- Line 142
+	--[[ Upvalues[2]:
+		[1]: maps_upvr (readonly)
+		[2]: mapre_upvr (readonly)
+	]]
+	maps_upvr.map1.BorderColor3 = Color3.fromRGB(255, 0, 0)
+	maps_upvr.map2.BorderColor3 = Color3.new(1, 1, 1)
+	maps_upvr.map3.BorderColor3 = Color3.new(1, 1, 1)
+	mapre_upvr:FireServer(1)
+	input1:Disconnect()
+	if input2 then
+		input2:Disconnect()
+	end
+	if input3 then
+		input3:Disconnect()
+	end
+end) -- Setting global
+input2 = maps_upvr.map2.input.MouseButton1Click:Connect(function() -- Line 157
+	--[[ Upvalues[2]:
+		[1]: maps_upvr (readonly)
+		[2]: mapre_upvr (readonly)
+	]]
+	maps_upvr.map2.BorderColor3 = Color3.fromRGB(255, 0, 0)
+	maps_upvr.map1.BorderColor3 = Color3.new(1, 1, 1)
+	maps_upvr.map3.BorderColor3 = Color3.new(1, 1, 1)
+	mapre_upvr:FireServer(2)
+	input1:Disconnect()
+	input2:Disconnect()
+	if input3 then
+		input3:Disconnect()
+	end
+end) -- Setting global
+input3 = maps_upvr.map3.input.MouseButton1Click:Connect(function() -- Line 170
+	--[[ Upvalues[2]:
+		[1]: maps_upvr (readonly)
+		[2]: mapre_upvr (readonly)
+	]]
+	maps_upvr.map3.BorderColor3 = Color3.fromRGB(255, 0, 0)
+	maps_upvr.map1.BorderColor3 = Color3.new(1, 1, 1)
+	maps_upvr.map2.BorderColor3 = Color3.new(1, 1, 1)
+	mapre_upvr:FireServer(3)
+	input1:Disconnect()
+	input2:Disconnect()
+	input3:Disconnect()
+end) -- Setting global
+maps_upvr:FindFirstChild("map"..1).Visible = true
+wait(0.5)
+maps_upvr:FindFirstChild("map"..2).Visible = true
+wait(0.5)
+maps_upvr:FindFirstChild("map"..3).Visible = true
+wait(0.5)
+local any_Create_result1_upvr = TweenService_upvr:Create(circle, TweenInfo.new(3.3333333333333335, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1), {
+	Rotation = circle.Rotation + 360;
+})
+local any_Create_result1_upvr_6 = TweenService_upvr:Create(flare, TweenInfo.new(1.6666666666666667, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1), {
+	Rotation = circle.Rotation + 360;
+})
+mapre_upvr.OnClientEvent:Connect(function(arg1) -- Line 185
+	--[[ Upvalues[6]:
+		[1]: maps_upvr (readonly)
+		[2]: TweenService_upvr (readonly)
+		[3]: any_Create_result1_upvr_3 (readonly)
+		[4]: any_Create_result1_upvr_2 (readonly)
+		[5]: any_Create_result1_upvr (readonly)
+		[6]: any_Create_result1_upvr_6 (readonly)
+	]]
+	script.Parent.finish:Play()
+	for i_2 = 1, 3 do
+		if maps_upvr:FindFirstChild("map"..i_2) ~= maps_upvr:FindFirstChild("map"..arg1) then
+			maps_upvr:FindFirstChild("map"..i_2).Visible = false
+		end
+	end
+	TweenService_upvr:Create(maps_upvr:FindFirstChild("map"..arg1), TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		Position = UDim2.new(0.5, 0, 0.5, 0);
+	}):Play()
+	wait(0.5)
+	any_Create_result1_upvr_3:Cancel()
+	any_Create_result1_upvr_2:Cancel()
+	wait()
+	any_Create_result1_upvr:Play()
+	any_Create_result1_upvr_6:Play()
+	TweenService_upvr:Create(maps_upvr:FindFirstChild("map"..arg1), TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		Size = UDim2.new(0.126, 0, 0.135, 0);
+	}):Play()
+	wait(1)
+	TweenService_upvr:Create(maps_upvr:FindFirstChild("map"..arg1).input, TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		BackgroundTransparency = 0;
+	}):Play()
+	TweenService_upvr:Create(maps_upvr:FindFirstChild("map"..arg1), TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		Size = UDim2.new(1.4, 0, 1.4, 0);
+	}):Play()
+	wait(1.35)
+	maps_upvr:FindFirstChild("map"..arg1).input.BackgroundTransparency = 0
+	wait(1)
+	maps_upvr:FindFirstChild("map"..arg1).dumbline:Destroy()
+	TweenService_upvr:Create(maps_upvr:FindFirstChild("map"..arg1).input, TweenInfo.new(1.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), {
+		BackgroundColor3 = Color3.new();
+	}):Play()
+	wait(1.55)
+	script.Parent:Destroy()
+end)
