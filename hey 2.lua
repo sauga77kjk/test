@@ -1,10 +1,10 @@
 local limbsc1 = {
 	--left
-	ls = CFrame.new(3.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0),
-	lh = CFrame.new(4.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+	lh = CFrame.new(3.5, 1, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0),
+	ls = CFrame.new(4.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0),
 	--right
-	rs = CFrame.new(-3.5, 1, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0),
-	rh = CFrame.new(-4.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+	rh = CFrame.new(-3.5, 1, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0),
+	rs = CFrame.new(-4.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
 }
 local torsosize = Vector3.new(10, 2, 1)
 local chr = owner.Character
