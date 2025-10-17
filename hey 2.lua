@@ -10,6 +10,6 @@ local torsosize = Vector3.new(10, 2, 1)
 local chr = owner.Character
 chr.Torso.Size = torsosize
 chr.Torso["Left Shoulder"].C1 = limbsc1.ls
-chr.Torso["Right Shoulder"].C1 = limbsc1.rs
 chr.Torso["Left Hip"].C1 = limbsc1.lh
 chr.Torso["Right Hip"].C1 = limbsc1.rh
+chr.Torso["Right Shoulder"].C1 = limbsc1.rs
